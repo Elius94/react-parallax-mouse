@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Motion, spring } from 'react-motion';
+import { Motion, spring } from '@serprex/react-motion';
 
 interface Props {
   children: JSX.Element[] | JSX.Element;
@@ -40,7 +40,7 @@ const MouseParallaxContainer = ({
   // Container reference with callback to use it inside of useEffect
   // prettier-ignore
   const [containerRef, setContainerRef] = useState<{ current: HTMLDivElement | null; }>({ current: null });
-  const containerRefWithCallback = useCallback((node) => {
+  const containerRefWithCallback = useCallback((node : any) => {
     if (node !== null) {
       setContainerRef({ current: node });
     }
@@ -142,7 +142,7 @@ const MouseParallaxContainer = ({
                     : { x: 0, y: 0 }
                 }
               >
-                {(springOffset) => {
+                {(springOffset : any) => {
                   // updateStyles Injection
                   let [transition, transform, rest] = ['', '', {}];
 
